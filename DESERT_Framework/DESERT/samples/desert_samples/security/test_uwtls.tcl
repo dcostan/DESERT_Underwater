@@ -140,7 +140,7 @@ Module/UW/APPLICATION set destAddr_               0
 Module/UW/APPLICATION set destPort_               0
 
 # TLS
-Module/UW/TLS set debug_ 0
+Module/UW/TLS set debug_                          0
 
 # Physical
 Module/UW/PHYSICAL  set BitRate_                  $opt(bitrate)
