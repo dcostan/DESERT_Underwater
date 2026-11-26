@@ -162,7 +162,7 @@ Module/UW/PHYSICAL  set debug_                    0
 # Interference
 Module/UW/INTERFERENCE set debug_                 0
 Module/UW/INTERFERENCE set use_maxinterval_       1
-Module/UW/INTERFERENCE set maxinterval_           0
+Module/UW/INTERFERENCE set maxinterval_           $opt(maxinterval_)
 
 # Propagation
 MPropagation/Underwater set debug_                0
@@ -241,8 +241,6 @@ proc createNode { id } {
     $posdb($id) addpos [$ipif($id) addr] $position($id)
     
     set interf_data($id) [new "Module/UW/INTERFERENCE"]
-    $interf_data($id) set maxinterval_ $opt(maxinterval_)
-    $interf_data($id) set debug_       0
 
     $phy($id) setPropagation $propagation
     set prt_ [expr ($id) + 4000]
@@ -327,8 +325,6 @@ proc createSink { } {
     $posdb_sink addpos [$ipif_sink addr] $position_sink
 
     set interf_data_sink [new "Module/UW/INTERFERENCE"]
-    $interf_data_sink set maxinterval_ $opt(maxinterval_)
-    $interf_data_sink set debug_       0
 
     for {set cnt 0} {$cnt < $opt(nn)} {incr cnt} {
         set prt_ [expr ($cnt) + 5000]
