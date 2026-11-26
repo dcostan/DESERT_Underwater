@@ -170,7 +170,7 @@ MPropagation/Underwater set windspeed_            10
 MPropagation/Underwater set shipping_             0
 
 # Channel
-Module/UnderwaterChannel set propSpeed_ $opt(propagation_speed)
+Module/UnderwaterChannel set propSpeed_           $opt(propagation_speed)
 
 # Scheduler
 Scheduler/RealTime set maxinterval_               0
